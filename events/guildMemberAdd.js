@@ -13,7 +13,7 @@ client.on('guildMemberAdd', async member => {
   const footer = `You're the ${member.guild.memberCount}th member`;
   const color = '#ffffff';
   const channel = member.guild.channels.cache.get('966405787670949908')
-  Canvas.registerFont('./font/alata-regular.ttf', { family: 'alata' })
+  Canvas.registerFont('./font/Roboto-Light.ttf', { family: 'alata' })
 
   const options = {
     font: "alata",
