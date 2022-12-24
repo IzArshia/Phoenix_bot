@@ -13,10 +13,10 @@ client.on('guildMemberAdd', async member => {
   const footer = `To Phoenix Team Server`;
   const color = '#ffffff';
   const channel = member.guild.channels.cache.get('966405787670949908')
-  Canvas.registerFont('./font/Roboto-Light.ttf', { family: 'alata' })
+  Canvas.registerFont('./font/Roboto-Light.ttf', { family: 'Roboto' })
 
   const options = {
-    font: "alata",
+    font: "Roboto",
     attachmentName: `welcome-${member.id}`,
     title_fontSize: 80,
     subtitle_fontSize: 50,
