@@ -1,4 +1,4 @@
-const { EmbedBuilder, Collection, PermissionsBitField , ButtonBuilder, StringSelectMenuBuilder, ActionRowBuilder, TextInputBuilder, TextInputStyle, ModalBuilder, MessageAttachment  } = require('discord.js');
+const { EmbedBuilder, Collection, PermissionsBitField , ButtonBuilder, StringSelectMenuBuilder, ActionRowBuilder, TextInputBuilder, TextInputStyle, ModalBuilder, AttachmentBuilder } = require('discord.js');
 const client = require('..');
 const config = require('../config.json');
 const Canvas = require('canvas');
@@ -38,7 +38,7 @@ client.on('guildMemberAdd', async member => {
     canvas.context.arc(512, 166, 119, 0, Math.PI * 2, true);
     canvas.context.closePath();
     canvas.context.clip();
-    const attachment = new MessageAttachment(canvas.create.toBuffer(), `welcome.png`);
+    const attachment = new AttachmentBuilder(canvas.create.toBuffer(), `welcome.png`)
 
     client.channels.cache.get("966405787670949908").send(attachment);
 
