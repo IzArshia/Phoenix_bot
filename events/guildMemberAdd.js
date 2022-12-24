@@ -38,6 +38,12 @@ client.on('guildMemberAdd', async member => {
     canvas.context.arc(512, 166, 119, 0, Math.PI * 2, true);
     canvas.context.closePath();
     canvas.context.clip();
+    const avatar = member.user.displayAvatarURL({ format: "png" });
+    await Canvas.loadImage(avatar)
+		.then(img => {
+			canvas.context.drawImage(img, 393, 47, 238, 238);
+		});
+
     const attachment = new AttachmentBuilder(canvas.create.toBuffer(), `welcome.png`)
 
     const channel = member.guild.channels.cache.get('966405787670949908')
