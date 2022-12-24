@@ -40,6 +40,8 @@ client.on('guildMemberAdd', async member => {
     canvas.context.clip();
     const attachment = new AttachmentBuilder(canvas.create.toBuffer(), `welcome.png`)
 
-    client.channels.cache.get("966405787670949908").send(attachment);
+    const channel = member.guild.channels.cache.get('966405787670949908')
+
+    channel.send({ files: [attachment] });
 
 });
