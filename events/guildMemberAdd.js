@@ -17,7 +17,7 @@ client.on('guildMemberAdd', async member => {
     ctx.font = `${fontsize}px alata`;
     ctx.fillStyle = "#ffffff";
 
-    const background = 'https://s2.uupload.ir/files/background_1oho.png';
+    const background = 'https://i.imgur.com/XtImCKS.png';
 
     const bg = await Canvas.loadImage(background);
     ctx.drawImage(bg, 0, 0, 1024, 500);
