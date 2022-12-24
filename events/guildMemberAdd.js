@@ -6,24 +6,40 @@ const Canvas = require('canvas');
 const { welcomeImage } = require('ultrax');
 
 client.on('guildMemberAdd', async member => {
-  const bg = 'https://s2.uupload.ir/files/background_1oho.png';
-  const avatar = member.user.displayAvatarURL({ extension: "png" });
-  const title = "welcome";
-  const subtitle = member.user.tag;
-  const footer = `To Phoenix Team Server`;
-  const color = '#ffffff';
-  const channel = member.guild.channels.cache.get('966405787670949908')
-  Canvas.registerFont('./font/alata-regular.ttf', { family: 'alata' })
 
-  const options = {
-    font: "alata",
-    attachmentName: `welcome-${member.id}`,
-    title_fontSize: 80,
-    subtitle_fontSize: 50,
-    footer_fontSize: 30
-  };
+  const welcomeCanvas = {};
+    welcomeCanvas.create = Canvas.createCanvas(1024, 500);
+    welcomeCanvas.context = welcomeCanvas.create.getContext('2d');
 
-  const image = await welcomeImage(bg, avatar, title, subtitle, footer, color, options);
+    let fontsize = 45;
+    Canvas.registerFont('./font/alata-regular.ttf', { family: 'alata' })
+    const ctx = welcomeCanvas.context;
+    ctx.font = `${fontsize}px alata`;
+    ctx.fillStyle = "#ffffff";
 
-  channel.send({ files: [image] });
+    const background = 'https://s2.uupload.ir/files/background_1oho.png';
+
+    const bg = await Canvas.loadImage(background);
+    ctx.drawImage(bg, 0, 0, 1024, 500);
+    ctx.textAlign = 'center';
+    ctx.fillText(`welcome`, 512, 360);
+    ctx.beginPath();
+    ctx.arc(512, 166, 128, 0, Math.PI * 2, true);
+    ctx.stroke();
+    ctx.fill();
+    
+    const canvas = welcomeCanvas;
+    canvas.context.font = `${fontsize}px alata`,
+    canvas.context.textAlign = 'center';
+    canvas.context.fillText(`${member.user.tag}`, 512, 410);
+    canvas.context.font = `${fontsize}px alata`;
+    canvas.context.fillText(`To Phoenix Team Server`, 512, 455);
+    canvas.context.beginPath();
+    canvas.context.arc(512, 166, 119, 0, Math.PI * 2, true);
+    canvas.context.closePath();
+    canvas.context.clip();
+    const attachment = new MessageAttachment(canvas.create.toBuffer(), `welcome.png`);
+
+    client.channels.cache.get("966405787670949908").send(attachment);
+
 });
