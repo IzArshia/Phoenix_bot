@@ -13,7 +13,7 @@ client.on('guildMemberAdd', async member => {
   const footer = `To Phoenix Team Server`;
   const color = '#ffffff';
   const channel = member.guild.channels.cache.get('966405787670949908')
-  Canvas.registerFont('../font/alata-regular.ttf', { family: 'alata' })
+  Canvas.registerFont('./font/alata-regular.ttf', { family: 'alata' })
 
   const options = {
     font: "alata",
