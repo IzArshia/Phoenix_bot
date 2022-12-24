@@ -10,7 +10,7 @@ client.on('guildMemberAdd', async member => {
   const avatar = member.user.displayAvatarURL({ extension: "png" });
   const title = "welcome";
   const subtitle = member.user.tag;
-  const footer = `You're the ${member.guild.memberCount}th member`;
+  const footer = `To Phoenix Team Server`;
   const color = '#ffffff';
   const channel = member.guild.channels.cache.get('966405787670949908')
   Canvas.registerFont('./font/Roboto-Light.ttf', { family: 'alata' })
