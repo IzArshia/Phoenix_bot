@@ -1,0 +1,64 @@
+{
+	"prefix": "!",
+	"verifyRole": "1016704626956963870",
+	"guildId": "966401351603085423",
+	"voicechid": "966402169588822027",
+	"ChMomentIr": "966403590375751771",
+	"ChMomentUs": "966403533702303774",
+	"ChTotalMembers": "966403485753028669",
+	"RulesChannel": "966408041652183122",
+	"RolesChannel": "966411890534256670",
+	"FeedbackChannel": "966412807086170122",
+	"sendFeedbacksChannel": "1055558341499310191",
+	"SuggestionsChannel": "966411601966157915",
+	"Timer": 30,
+	
+	"//first_comment":  "Color Roles IDs:",
+
+	"BioRole": "1055427140125986906",
+	
+	"RedRole": "1055427184677892117",
+	"BlueRole": "1055427197965443102",
+	"YellowRole": "1055427210279923772",
+	"GreenRole": "1055428253516566559",
+	"OrangeRole": "1055428266900602900",
+
+	"//second_comment": "Age Roles IDs:",
+	
+	"fifteenRole": "1055428274349682719",
+	"eighteenRole": "1055428287452688424",
+	"twentyRole": "1055428291391127643",
+	"thirtyRole": "1055428290736816128",
+	"fortyRole": "1055428883949821983",
+
+	"//comment3": "Mention Roles IDs:",
+
+	"MentionRole": "1055427037239713812",
+
+	"AnnouncementRole": "1055429774157287434",
+	"UpdateRole": "1055429778628415488",
+	"EventRole": "1055429784647241738",	
+
+	"//comment4": "Month Of Birth Roles IDs:",
+
+	"FarvardinRole": "1055428869278138448",
+	"OrdibeheshtRole": "1055429064216805416",
+	"KhordadRole": "1055429012429742091",
+
+	"TirRole": "1055429017098002442",
+	"MordadRole": "1055429021485252638",
+	"ShahrivarRole": "1055429025331425350",
+
+	"MehrRole": "1055429028309377067",
+	"AbanRole": "1055429035922038824",
+	"AzarRole": "1055429044767830016",
+
+	"DeyRole": "1055429048135852042",
+	"BahmanRole": "1055429052921548900",
+	"EsfandRole": "1055429059296886844",
+
+	
+	"messages": {
+		"COOLDOWN_MESSAGE": "You are on `<duration>` cooldown!"
+	}
+}
