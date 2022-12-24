@@ -8,15 +8,15 @@ const { welcomeImage } = require('ultrax');
 client.on('guildMemberAdd', async member => {
   const bg = 'https://s26.picofile.com/file/8457481842/background.png';
   const avatar = member.user.displayAvatarURL({ extension: "png" });
-  const title = "Welcome";
+  const title = "welcome";
   const subtitle = member.user.tag;
   const footer = `To Phoenix Team Server`;
   const color = '#ffffff';
   const channel = member.guild.channels.cache.get('966405787670949908')
-  Canvas.registerFont('./font/Roboto-Light.ttf', { family: 'Roboto' })
+  Canvas.registerFont('./font/alata-regular.ttf', { family: 'alata' })
 
   const options = {
-    font: "Roboto",
+    font: "alata",
     attachmentName: `welcome-${member.id}`,
     title_fontSize: 80,
     subtitle_fontSize: 50,
