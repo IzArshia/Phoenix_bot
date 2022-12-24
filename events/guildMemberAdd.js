@@ -6,7 +6,7 @@ const Canvas = require('canvas');
 const { welcomeImage } = require('ultrax');
 
 client.on('guildMemberAdd', async member => {
-  const bg = 'https://s26.picofile.com/file/8457481842/background.png';
+  const bg = 'https://imgur.com/okIR1iY.png';
   const avatar = member.user.displayAvatarURL({ extension: "png" });
   const title = "welcome";
   const subtitle = member.user.tag;
