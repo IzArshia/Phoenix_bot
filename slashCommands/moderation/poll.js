@@ -2,6 +2,7 @@ const { EmbedBuilder, ApplicationCommandType, ButtonBuilder, ActionRowBuilder, B
 
 const { find } = require('node-emoji');
 const polls = require("../../models/polls")
+const date = new Date()
 
 module.exports = {
         name: "poll",
@@ -96,7 +97,7 @@ module.exports = {
                     color: "3447003",
                     title: question.slice(0, 256),
                     description: rawOptions.map((v, i) => `${cEmojis[i] || emojis[i]} ${v}`).join("\n"),
-                    timestamp: Date.now ,
+                    timestamp: time(date),
                     footer: {
                         text: `Poll Started At`
                     }
@@ -173,7 +174,7 @@ module.exports = {
                     title: msg.embeds[0].title,
                     color: "15548997",
                     description: `**Poll ended**\nThe most voted option got ${x[0][1]} votes and it was:\n${winner}`,
-                    timestamp: Date.now(),
+                    timestamp: time(date),
                     footer: {
                         text: `Poll Ended At`
                     }
