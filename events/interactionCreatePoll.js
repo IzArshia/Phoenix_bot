@@ -3,7 +3,7 @@ const { EmbedBuilder, Collection, PermissionsBitField , ButtonBuilder, StringSel
 const client = require('..');
 
 client.on('interactionCreate', async interaction => {
-    if (!interaction.isButton()) return;
+    if (!interaction.isButton()) return console.log(`button yaft nashod !`);
 
     const pol = await polls.findOne({ message: interaction.message.id });
 
@@ -41,6 +41,7 @@ client.on('interactionCreate', async interaction => {
     m.edit({
         components: m.components.map(row => {
             row.components = row.components?.map(v => {
+                v.emoji = v.customId
                 v.label = `${pol.votes[v.customId] || 0}`;
 
                 return v;
