@@ -6,7 +6,7 @@ module.exports = async (client, interaction) => {
 
     const pol = await polls.findOne({ message: interaction.message.id });
 
-    if (!pol) return;
+    if (!pol) return console.log(`not found poll`);
 
     await interaction.deferReply({
         ephemeral: true
@@ -14,7 +14,7 @@ module.exports = async (client, interaction) => {
 
     if (pol.voters.includes(interaction.user.id)) return interaction.editReply({
         embeds: [{
-            color: "RED",
+            color: "15548997",
             title: "❌ Already Voted!"
         }]
     });
@@ -30,7 +30,7 @@ module.exports = async (client, interaction) => {
 
     interaction.editReply({
         embeds: [{
-            color: "GREEN",
+            color: "5763719",
             title: "✅ Voted Successfully"
         }]
     });
