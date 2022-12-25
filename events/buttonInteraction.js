@@ -3,7 +3,7 @@ const client = require('..');
 const config = require('../config.json');
 const polls = require("../models/polls");
 client.on('interactionCreate', async interaction => {
-	if (!interaction.isButton()) return;
+	if (!interaction.isButton()) return console.log(`botton have a problem`,);
 
 
     if (interaction.customId === 'DisRule') {
@@ -199,7 +199,7 @@ client.on('interactionCreate', async interaction => {
     m.edit({
         components: m.components.map(row => {
             row.components = row.components?.map(v => {
-                v.label = `${pol.votes[v.customId]}`;
+                v.label = `${pol.votes[v.customId] || 0}`;
 
                 return v;
             });
