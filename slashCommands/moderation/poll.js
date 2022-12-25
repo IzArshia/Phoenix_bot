@@ -1,4 +1,4 @@
-const { EmbedBuilder, ApplicationCommandType, ButtonBuilder, ActionRowBuilder } = require('discord.js');
+const { EmbedBuilder, ApplicationCommandType, ButtonBuilder, ActionRowBuilder, ButtonStyle, time } = require('discord.js');
 
 const { find } = require('node-emoji');
 const polls = require("../../models/polls")
@@ -66,7 +66,7 @@ module.exports = {
 
             if (rawOptions.length < 2 || rawOptions.length > 25) return interaction.editReply({
                 embeds: [{
-                    color: "RED",
+                    color: "15548997",
                     title: "❌ Invalid Options",
                     description: "You need at least 2 options and a maximum of 25 options, You need to seprate options via `|`"
                 }]
@@ -83,7 +83,7 @@ module.exports = {
                     customId: emojis[i],
                     emoji: emojis[i],
                     label: "0",
-                    style: "SECONDARY"
+                    style: ButtonStyle.Secondary
                 });
 
                 rows[ind] ? rows[ind].addComponents(button) : rows[ind] = new ActionRowBuilder({
@@ -93,10 +93,10 @@ module.exports = {
 
             channel.send({
                 embeds: [{
-                    color: "BLUE",
+                    color: "3447003",
                     title: question.slice(0, 256),
                     description: rawOptions.map((v, i) => `${cEmojis[i] || emojis[i]} ${v}`).join("\n"),
-                    timestamp: Date.now(),
+                    timestamp: Date.now ,
                     footer: {
                         text: `Poll Started At`
                     }
@@ -115,15 +115,16 @@ module.exports = {
 
                 interaction.editReply({
                     embeds: [{
-                        color: "GREEN",
+                        color: "5763719",
                         title: "✅ Poll Created",
                         description: `Check the poll [here](${v.url})`
                     }]
                 });
             }).catch((e) => {
+                console.log(e)
                 interaction.editReply({
                     embeds: [{
-                        color: "RED",
+                        color: "15548997",
                         title: "❌ Unable To Create The Poll",
                     }]
                 });
@@ -131,14 +132,14 @@ module.exports = {
         } else if (option === "end") {
             if (!poll) return interaction.editReply({
                 embeds: [{
-                    color: "RED",
+                    color: "15548997",
                     title: "❌ Invalid Poll Message ID",
                 }]
             });
 
             if (poll.ended) return interaction.editReply({
                 embeds: [{
-                    color: "RED",
+                    color: "15548997",
                     title: "❌ Poll is already Ended",
                 }]
             });
@@ -147,7 +148,7 @@ module.exports = {
 
             if (!msg) return interaction.editReply({
                 embeds: [{
-                    color: "RED",
+                    color: "15548997",
                     title: "❌ Poll Not Endable",
                     description: `Poll message is deleted, So it is no longer endable`
                 }]
@@ -161,7 +162,7 @@ module.exports = {
 
             interaction.editReply({
                 embeds: [{
-                    color: "GREEN",
+                    color: "5763719",
                     title: "Poll Ended"
                 }]
             })
@@ -170,7 +171,7 @@ module.exports = {
                 components: [],
                 embeds: [{
                     title: msg.embeds[0].title,
-                    color: "RED",
+                    color: "15548997",
                     description: `**Poll ended**\nThe most voted option got ${x[0][1]} votes and it was:\n${winner}`,
                     timestamp: Date.now(),
                     footer: {
