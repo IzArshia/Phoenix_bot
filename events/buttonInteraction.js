@@ -198,8 +198,7 @@ client.on('interactionCreate', async interaction => {
 
     m.edit({
         components: m.components.map(row => {
-            row.components = row.components?.map(v => {
-                v.emoji = v.customId
+            row.components = row.components.map(v => {
                 v.label = `${pol.votes[v.customId] || 0}`;
 
                 return v;
