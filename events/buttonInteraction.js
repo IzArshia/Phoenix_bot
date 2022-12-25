@@ -1,7 +1,7 @@
 const { EmbedBuilder, Collection, PermissionsBitField , ButtonBuilder, StringSelectMenuBuilder, ActionRowBuilder, TextInputBuilder, TextInputStyle, ModalBuilder  } = require('discord.js');
 const client = require('..');
 const config = require('../config.json');
-
+const polls = require("../models/polls");
 client.on('interactionCreate', async interaction => {
 	if (!interaction.isButton()) return;
 
