@@ -15,6 +15,9 @@ const client = new Client({
 const fs = require('fs');
 const config = require('./config.json');
 require('dotenv').config() // remove this line if you are using replit
+const mongoose = require("mongoose");
+
+mongoose.connect(process.env.MONGO_URI, { useUnifiedTopology: true, useNewUrlParser: true });
 
 client.commands = new Collection()
 client.aliases = new Collection()
