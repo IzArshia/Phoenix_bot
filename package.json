@@ -25,7 +25,9 @@
     "fs": "^0.0.1-security",
     "jalali-moment": "^3.3.11",
     "moment": "^2.29.4",
+    "mongoose": "^6.8.1",
     "ms": "^2.1.3",
+    "node-emoji": "^1.11.0",
     "ultrax": "^2.0.5"
   }
 }
