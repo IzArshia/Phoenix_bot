@@ -1,6 +1,6 @@
 const { Client, ChatInputCommandInteraction, ApplicationCommandOptionType, ChannelType, EmbedBuilder } = require('discord.js');
 const ms = require('ms');
-
+const client = require('..');
 module.exports = {
     name: 'giveaway',
     description: '⚙ Giveaways system',

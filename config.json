@@ -57,6 +57,10 @@
 	"BahmanRole": "1055429052921548900",
 	"EsfandRole": "1055429059296886844",
 
+	"//comment5": "Giveaway IDs:",
+	
+
+
 	
 	"messages": {
 		"COOLDOWN_MESSAGE": "You are on `<duration>` cooldown!"

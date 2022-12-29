@@ -1,10 +1,9 @@
 const { readdirSync } = require('fs');
 require('colors');
-
 module.exports = (client) => {
     if(client.config.giveawayManager.privateMessageInformation) {
-        readdirSync('./src/GiveawaysEvents/').forEach(async (dir) => {
-            const events = readdirSync(`./src/GiveawaysEvents/${dir}`).filter(file => file.endsWith('.js'));
+        readdirSync('./GiveawaysEvents').forEach(async (dir) => {
+            const events = readdirSync(`./GiveawaysEvents//${dir}`).filter(file => file.endsWith('.js'));
         
             for(const file of events) {
                 const event = require(`${__dirname}/../GiveawaysEvents/${dir}/${file}`);
