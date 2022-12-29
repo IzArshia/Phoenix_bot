@@ -1,4 +1,3 @@
-const console = require('console');
 const {ButtonStyle, EmbedBuilder, Collection, PermissionsBitField , ButtonBuilder, StringSelectMenuBuilder, ActionRowBuilder, TextInputBuilder, TextInputStyle, ModalBuilder  } = require('discord.js');
 const client = require('..');
 const config = require('../config.json');
@@ -42,7 +41,6 @@ if (!interaction.isButton()) return console.log(`botton have a problem to change
         });
     
 
-      console.log(pol.voters.length)
         
     const m = interaction.message;
     let newbut =[]
